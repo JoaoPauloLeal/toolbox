@@ -1,0 +1,3 @@
+----------------------Aditivos---------------------
+Devem ter uma sequencia cronologica
+Não pode ter dois aditivos com a mesma data

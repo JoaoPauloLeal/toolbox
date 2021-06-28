@@ -1,0 +1,72 @@
+#pesquisa {
+  display: none;
+}
+
+.bth-logo--brand-custom {
+  border-right-color: #4392f1;
+}
+
+.title-content {
+  background-color: #4392f1 !important;
+}
+
+.page-title {
+  margin-left: 1%;
+}
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+#armored_website {
+  display: inline-block;
+}
+
+.footer {
+  display: block;
+  text-align: center;
+}
+
+#apresentacao {
+  background-color: #4392f1 !important;
+  border-color: #4392f1 !important;
+  margin-top: 5%;
+}
+
+#atividades {
+  margin-bottom: 1%;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+@keyframes zoom {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+/* Add Animation */
+.modal-content,
+#caption {
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+  from {
+    -webkit-transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+  }
+}

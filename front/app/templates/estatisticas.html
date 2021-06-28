@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+{% block head %}
+  {{ super() }}
+{% endblock %}
+
+<body>
+<div class="container-fluid">
+    <header>
+        <div class="megamenu-container">
+            <div class="container iv">
+                <ul class="megamenu">
+                    <li class="menu-static"><a href="#" class="drop">
+                        <div class="bth-logo bth-logo--brand-custom">
+                            <div class="bth-logo__image"></div>
+                        </div>
+                        <span class="megamenu-title">Migração de dados</span>
+                    </a>
+                    </li>
+                    <li class="mm-delay">
+                        <a onclick="redirect('/')">Gestão</a>
+                    </li>
+                    <li onclick="abreDivPesquisa()" class="mm-delay">
+                        <a>Resumo de processos</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <content>
+        <div id="cronograma" class="container container-page">
+            <div class="page-header">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3 class="page-title">Estatísticas</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="section-content">
+                <div class="col-md-12">
+                    <div class="page-header">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <h1 class="page-title">Sistema Convênios</h1>
+                            </div>
+                            <div class="col-md-4">
+                                <ctb-menu-breadcrumbs></ctb-menu-breadcrumbs>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="section-content">
+                        <div class="row" data-bf-loading="EntidadesContasBancariasCtrl.tracker.list">
+                            <div class="col-md-12">
+                                <table
+                                        class="table"
+                                        data-ng-class="{ 'table-condensed' : EntidadesContasBancariasCtrl.isCondensed }"
+                                        data-ng-if="!EntidadesContasBancariasCtrl.isEntidadesContasBancariasEmpty()">
+                                    <thead data-ng-if="!EntidadesContasBancariasCtrl.isPesquisaEntidadesContasBancariasEmpty()">
+                                    <th width="30%">
+                                        Tipo de Cadastro
+                                    </th>
+                                    <th width="25%">
+                                        Situação
+                                    </th>
+                                    <th width="25%">
+                                        Mensagem de retorno
+                                        <small class="text-muted">(código)</small>
+                                    </th>
+                                    <th width="100">
+                                        Total
+                                    </th>
+                                    <th width="70">
+                                        Migrados
+                                    </th>
+                                    <th width="64"></th>
+                                    </thead>
+                                    <tbody>
+                                    {% for item in lista %}
+                                    <tr data-bf-undo-group id="trEntidadesContasBancariasList">
+                                        <td>
+                                            <span>{{item.tipo_registro}}</span>
+                                        </td>
+                                        <td>
+                                            <span>{{item.situacao}}</span>
+                                        </td>
+                                        <td>
+                                            <span>{{item.mensagem}}</span>
+                                            <small class="text-muted">
+                                                <span>{{item.codigo_mensagem}}</span>
+                                            </small>
+                                        </td>
+                                        <td><span>{{item.total_registro}}</span></td>
+                                        <td><span>{{item.total_migrados}}</span></td>
+
+                                        <td class="text-center">
+                                            <div class="btn-group">
+                                                <a href class="dropdown-toggle" data-toggle="dropdown"
+                                                   aria-haspopup="true" aria-expanded="false" title="Outras opções"><i
+                                                        class="fa fa-cogs fa-fw"></i></a>
+                                                <ul class="dropdown-menu dropdown-menu-right"
+                                                    aria-labelledby="dropdownColunas">
+                                                    <li class="dropdown-header">Ações disponíveis</li>
+                                                    <li>
+                                                        <a href=""
+                                                           title="Reenviar">Reenviar</a>
+                                                        <a href=""
+                                                           title="Parar">Parar</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="pesquisa" class="container container-page">
+            <div class="page-header">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3 class="page-title">Processos em execução</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="section-content">
+                <div class="col-md-12">
+                    <p>Criar lista simplificada de processos e status... talvez % dos cadastros, algo semelhante...</p>
+                    <a target="_blank"
+                       href="/"
+                       class="btn btn-primary">Gerar relatório dos processos</a>
+                </div>
+            </div>
+        </div>
+    </content>
+</div>
+
+</body>
+
+</html>

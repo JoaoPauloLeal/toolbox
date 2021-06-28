@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/packages/tools/compras/relatorios_incosistencias/entidade1_comissoes.txt" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/packages/tools/compras/relatorios_incosistencias/entidade1_fornecedores_sem_proposta.txt" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/packages/tools/compras/relatorios_incosistencias/entidade1_proposta_processo.txt" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/packages/tools/compras/relatorios_incosistencias/entidade2_comissoes.txt" charset="windows-1252" />
+  </component>
+</project>

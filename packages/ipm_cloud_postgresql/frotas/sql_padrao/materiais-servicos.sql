@@ -1,0 +1,1 @@
+select * from controle_migracao_auxiliar where tipo_registro like 'materiais-servicos';

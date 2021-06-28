@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Tool Box Convênios</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="https://i.ibb.co/2KddCq7/23113851-300x300.png" type="image/x-icon">
+    <script src="https://cdn.betha.cloud/base/g4/front-end/2.13/js/base.js"></script>
+    <script src="https://cdn.betha.cloud/base/g4/front-end/2.13/js/jquery.min.js"></script>
+    <script src="https://cdn.betha.cloud/base/g4/front-end/2.13/js/globalize.js"></script>
+    <script src="https://cdn.betha.cloud/base/g4/front-end/2.13/js/jquery-ui.min.js"></script>
+    <script src="https://cdn.betha.cloud/base/g4/front-end/2.13/js/select2.js"></script>
+    <script src="https://cdn.betha.cloud/base/g4/front-end/2.13/js/lodash.js"></script>
+    <script src="https://cdn.betha.cloud/base/g4/front-end/2.13/js/accounting.js"></script>
+    <script src="https://cdn.betha.cloud/base/g4/front-end/2.13/js/jquery-mask-plugin.js"></script>
+    <script src="https://cdn.betha.cloud/base/g4/front-end/2.13/js/module.js"></script>
+    <script src="https://cdn.betha.cloud/base/g4/front-end/2.13/js/browser.js"></script>
+    <script src="https://cdn.betha.cloud/base/g4/front-end/2.13/js/utils.js"></script>
+    <script src="https://cdn.betha.cloud/base/g4/front-end/2.13/js/messages.js"></script>
+    <script src="https://cdn.betha.cloud/base/g4/front-end/2.13/js/tabs.js"></script>
+    <script src="https://cdn.betha.cloud/base/g4/front-end/2.13/js/timepicker.js"></script>
+    <script src="https://cdn.betha.cloud/base/g4/front-end/2.13/js/date.js"></script>
+    <script src="https://cdn.betha.cloud/base/g4/front-end/2.13/js/calendar.js"></script>
+    <script src="https://cdn.betha.cloud/base/g4/front-end/2.13/js/modal.js"></script>
+    <script src="https://cdn.betha.cloud/base/g4/front-end/2.13/js/popover.js"></script>
+    <script src="https://cdn.betha.cloud/base/g4/design/3.11.9/bth-design.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="https://cdn.betha.cloud/base/g4/design/3.11.9/bth-design.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+          integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+</head>
+
+<body>
+<div id="modalSuite" data-bf-loading-type="dialog" class="modal fade in" style="display: none; z-index: 1070;">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content modal-content__sidebar">
+            <div class="modal-header">
+                <h5 class="modal-title">Saiba mais</h5>
+            </div>
+            <div class="modal-body modal-run">
+                <h3 class="text-center">Links úteis</h3>
+                <p class="text-center mt-5"><b>Service Layer/Central de ajuda:</b> Conheça a central de ajuda onde ira
+                    ter as
+                    documentações dos serviços da betha e todos links necessarios para suporte
+                </p>
+                <div class="row text-center">
+                    <div class="col 6">
+                        <a target="_blank"
+                           href="https://centraldeajuda.betha.com.br/"
+                           id="central_ajuda" class="btn btn-primary  btn-block">Ir para central de ajuda</a>
+                    </div>
+                    <div class="col 6">
+                        <a target="_blank"
+                           href="https://gitlab.services.betha.cloud/"
+                           id="motor_ajuda" class="btn btn-secondary  btn-block">Ir para documentação motor etl</a>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                        onclick="escondeModal('modalSuite')">Fechar
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="modalBFC" data-bf-loading-type="dialog" class="modal fade in" style="display: none; z-index: 1070;">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content modal-content__sidebar">
+            <div class="modal-header">
+                <h5 class="modal-title">Saiba mais</h5>
+            </div>
+            <div class="modal-body modal-run">
+                <h3 class="text-center">Links úteis</h3>
+                <p class="text-center mt-5"><b>Service Layer/Central de ajuda:</b> Conheça a central de ajuda onde ira
+                    ter as
+                    documentações dos serviços da betha e todos links necessarios para suporte
+                </p>
+                <div class="row text-center">
+                    <div class="col 6">
+                        <a target="_blank"
+                           href="https://centraldeajuda.betha.com.br/"
+                           id="central_ajuda" class="btn btn-primary  btn-block">Ir para central de ajuda</a>
+                    </div>
+                    <div class="col 6">
+                        <a target="_blank"
+                           href="https://gitlab.services.betha.cloud/"
+                           id="motor_ajuda" class="btn btn-secondary  btn-block">Ir para documentação motor etl</a>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                        onclick="escondeModal('modalBFC')">Fechar
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="modalWeb" data-bf-loading-type="dialog" class="modal fade in" style="display: none; z-index: 1070;">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content modal-content__sidebar">
+            <div class="modal-header">
+                <h5 class="modal-title">Saiba mais</h5>
+            </div>
+            <div class="modal-body modal-run">
+                <h3 class="text-center">Links úteis</h3>
+                <p class="text-center mt-5"><b>Service Layer/Central de ajuda:</b> Conheça a central de ajuda onde ira
+                    ter as
+                    documentações dos serviços da betha e todos links necessarios para suporte
+                </p>
+                <div class="row text-center">
+                    <div class="col 6">
+                        <a target="_blank"
+                           href="https://centraldeajuda.betha.com.br/"
+                           id="central_ajuda" class="btn btn-primary  btn-block">Ir para central de ajuda</a>
+                    </div>
+                    <div class="col 6">
+                        <a target="_blank"
+                           href="https://gitlab.services.betha.cloud/"
+                           id="motor_ajuda" class="btn btn-secondary  btn-block">Ir para documentação motor etl</a>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                        onclick="escondeModal('modalWeb')">Fechar
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="modalGroovy" data-bf-loading-type="dialog" class="modal fade in" style="display: none; z-index: 1070;">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content modal-content__sidebar">
+            <div class="modal-header">
+                <h5 class="modal-title">Saiba mais</h5>
+            </div>
+            <div class="modal-body modal-run">
+                <h3 class="text-center">Links úteis</h3>
+                <p class="text-center mt-5"><b>Service Layer/Central de ajuda:</b> Conheça a central de ajuda onde ira
+                    ter as
+                    documentações dos serviços da betha e todos links necessarios para suporte
+                </p>
+                <div class="row text-center">
+                    <div class="col 6">
+                        <a target="_blank"
+                           href="https://centraldeajuda.betha.com.br/"
+                           id="central_ajuda" class="btn btn-primary  btn-block">Ir para central de ajuda</a>
+                    </div>
+                    <div class="col 6">
+                        <a target="_blank"
+                           href="https://gitlab.services.betha.cloud/"
+                           id="motor_ajuda" class="btn btn-secondary  btn-block">Ir para documentação motor etl</a>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                        onclick="escondeModal('modalGroovy')">Fechar
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="modalGerenc" data-bf-loading-type="dialog" class="modal fade in" style="display: none; z-index: 1070;">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content modal-content__sidebar">
+            <div class="modal-header">
+                <h5 class="modal-title">Saiba mais</h5>
+            </div>
+            <div class="modal-body modal-run">
+                <h3 class="text-center">Links úteis</h3>
+                <p class="text-center mt-5"><b>Service Layer/Central de ajuda:</b> Conheça a central de ajuda onde ira
+                    ter as
+                    documentações dos serviços da betha e todos links necessarios para suporte
+                </p>
+                <div class="row text-center">
+                    <div class="col 6">
+                        <a target="_blank"
+                           href="https://centraldeajuda.betha.com.br/"
+                           id="central_ajuda" class="btn btn-primary  btn-block">Ir para central de ajuda</a>
+                    </div>
+                    <div class="col 6">
+                        <a target="_blank"
+                           href="https://gitlab.services.betha.cloud/"
+                           id="motor_ajuda" class="btn btn-secondary  btn-block">Ir para documentação motor etl</a>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                        onclick="escondeModal('modalGerenc')">Fechar
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="modalListaMapa" data-bf-loading-type="dialog" class="modal fade in" style="display: none; z-index: 1070;">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content modal-content__sidebar">
+            <div class="modal-header">
+                <h5 class="modal-title">Saiba mais</h5>
+            </div>
+            <div class="modal-body modal-run">
+                <h3 class="text-center">Links úteis</h3>
+                <p class="text-center mt-5"><b>Service Layer/Central de ajuda:</b> Conheça a central de ajuda onde ira
+                    ter as
+                    documentações dos serviços da betha e todos links necessarios para suporte
+                </p>
+                <div class="row text-center">
+                    <div class="col 6">
+                        <a target="_blank"
+                           href="https://centraldeajuda.betha.com.br/"
+                           id="central_ajuda" class="btn btn-primary  btn-block">Ir para central de ajuda</a>
+                    </div>
+                    <div class="col 6">
+                        <a target="_blank"
+                           href="https://gitlab.services.betha.cloud/"
+                           id="motor_ajuda" class="btn btn-secondary  btn-block">Ir para documentação motor etl</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                    onclick="escondeModal('modalListaMapa')">Fechar
+            </button>
+        </div>
+    </div>
+</div>
+</div>
+
+<div id="modalProjetos" data-bf-loading-type="dialog" class="modal fade in" style="display: none; z-index: 1070;">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content modal-content__sidebar">
+            <div class="modal-header">
+                <h5 class="modal-title">Saiba mais</h5>
+            </div>
+            <div class="modal-body modal-run">
+                <h3 class="text-center">Links úteis</h3>
+                <p class="text-center mt-5"><b>Service Layer/Central de ajuda:</b> Conheça a central de ajuda onde ira
+                    ter as
+                    documentações dos serviços da betha e todos links necessarios para suporte
+                </p>
+                <div class="row text-center">
+                    <div class="col 6">
+                        <a target="_blank"
+                           href="https://centraldeajuda.betha.com.br/"
+                           id="central_ajuda" class="btn btn-primary  btn-block">Ir para central de ajuda</a>
+                    </div>
+                    <div class="col 6">
+                        <a target="_blank"
+                           href="https://gitlab.services.betha.cloud/"
+                           id="motor_ajuda" class="btn btn-secondary  btn-block">Ir para documentação motor etl</a>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                        onclick="escondeModal('modalProjetos')">Fechar
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="modalAtividadesFinais" data-bf-loading-type="dialog" class="modal fade in"
+     style="display: none; z-index: 1070;">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content modal-content__sidebar">
+            <div class="modal-header">
+                <h5 class="modal-title">Saiba mais</h5>
+            </div>
+            <div class="modal-body modal-run">
+                <h3 class="text-center">Links úteis</h3>
+                <p class="text-center mt-5"><b>Service Layer/Central de ajuda:</b> Conheça a central de ajuda onde ira
+                    ter as
+                    documentações dos serviços da betha e todos links necessarios para suporte
+                </p>
+                <div class="row text-center">
+                    <div class="col 6">
+                        <a target="_blank"
+                           href="https://centraldeajuda.betha.com.br/"
+                           id="central_ajuda" class="btn btn-primary  btn-block">Ir para central de ajuda</a>
+                    </div>
+                    <div class="col 6">
+                        <a target="_blank"
+                           href="https://gitlab.services.betha.cloud/"
+                           id="motor_ajuda" class="btn btn-secondary  btn-block">Ir para documentação motor etl</a>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                        onclick="escondeModal('modalAtividadesFinais')">Fechar
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <header>
+        <div class="megamenu-container">
+            <div class="container iv">
+                <ul class="megamenu">
+                    <li class="menu-static"><a href="#" class="drop">
+                        <div class="bth-logo bth-logo--brand-custom">
+                            <div class="bth-logo__image"></div>
+                        </div>
+                        <span class="megamenu-title">Migração de dados</span>
+                    </a>
+                    </li>
+                    <li class="mm-delay">
+                        <a onclick="redirect('/')">Gestão</a>
+                    </li>
+                    <li onclick="abreDivPesquisa()" class="mm-delay">
+                        <a>Resumo de processos</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <content>
+        <div id="cronograma" class="container container-page">
+            <div class="page-header">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3 class="page-title">Visão geral</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="section-content">
+                <div class="col-md-12">
+                    <ul class="flex-list iv">
+                        <li onclick="mostraModal('modalSuite')" id="webservices" class="col-3">
+                            <div class="title-content">
+                                <div class="flex-list-header"></div>
+                                <div class="flex-list-body">
+                                    <i class="icone-produto fa fa-play"></i>
+                                    <div class="title ellipsis"><span>Execuções</span></div>
+                                </div>
+                                <div class="flex-list-footer"></div>
+                            </div>
+                        </li>
+                        <li onclick="redirect('estatisticas')" id="webservices" class="col-3">
+                            <div class="title-content">
+                                <div class="flex-list-header"></div>
+                                <div class="flex-list-body">
+                                    <i class="icone-produto fa fa-bar-chart"></i>
+                                    <div class="title ellipsis"><span>Estatísticas</span></div>
+                                </div>
+                                <div class="flex-list-footer"></div>
+                            </div>
+                        </li>
+                        <li onclick="mostraModal('modalBFC')" id="webservices" class="col-3">
+                            <div class="title-content">
+                                <div class="flex-list-header"></div>
+                                <div class="flex-list-body">
+                                    <i class="icone-produto fa fa-check-square"></i>
+                                    <div class="title ellipsis"><span>Pré validações</span></div>
+                                </div>
+                                <div class="flex-list-footer"></div>
+                            </div>
+                        </li>
+                        <li onclick="mostraModal('modalWeb')" id="webservices" class="col-3">
+                            <div class="title-content">
+                                <div class="flex-list-header"></div>
+                                <div class="flex-list-body">
+                                    <i class="icone-produto fa fa-file-text"></i>
+                                    <div class="title ellipsis"><span>Relatórios</span></div>
+                                </div>
+                                <div class="flex-list-footer"></div>
+                            </div>
+                        </li>
+                        <li onclick="mostraModal('modalGroovy')" class="col-3">
+                            <div class="title-content">
+                                <div class="flex-list-header"></div>
+                                <div class="flex-list-body">
+                                    <i class="icone-produto fa fa-book"></i>
+                                    <div class="title ellipsis"><span>Documentação</span></div>
+                                </div>
+                                <div class="flex-list-footer"></div>
+                            </div>
+                        </li>
+                        <li onclick="mostraModal('modalGerenc')" id="gerenc" class="col-3">
+                            <div class="title-content">
+                                <div class="flex-list-header"></div>
+                                <div class="flex-list-body">
+                                    <i class="icone-produto fa fa-cogs"></i>
+                                    <div class="title ellipsis"><span>Componentes</span>
+                                    </div>
+                                </div>
+                                <div class="flex-list-footer"></div>
+                            </div>
+                        </li>
+                        <li onclick="mostraModal('modalProjetos')" id="webservices" class="col-3">
+                            <div class="title-content">
+                                <div class="flex-list-header"></div>
+                                <div class="flex-list-body">
+                                    <i class="icone-produto fa fa-line-chart"></i>
+                                    <div class="title ellipsis"><span>Análise de projeção</span></div>
+                                </div>
+                                <div class="flex-list-footer"></div>
+                            </div>
+                        </li>
+                        <li onclick="mostraModal('modalAtividadesFinais')" id="webservices" class="col-3">
+                            <div class="title-content">
+                                <div class="flex-list-header"></div>
+                                <div class="flex-list-body">
+                                    <i class="icone-produto fa fa-pie-chart"></i>
+                                    <div class="title ellipsis"><span>Atividades Finais</span></div>
+                                </div>
+                                <div class="flex-list-footer"></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="pesquisa" class="container container-page">
+            <div class="page-header">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3 class="page-title">Processos em execução</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="section-content">
+                <div class="col-md-12">
+                    <p>Criar lista simplificada de processos e status... talvez % dos cadastros, algo semelhante...</p>
+                    <a target="_blank"
+                       href="/"
+                       class="btn btn-primary">Gerar relatório dos processos</a>
+                </div>
+            </div>
+        </div>
+    </content>
+</div>
+
+</body>
+
+</html>
